@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteSize Math</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>FalatKAlkulátor</h1>
+
+    <!-- Szűrhető input mező -->
+    <input type="text" id="ingredientInput" list="ingredientsList" placeholder="Válassz egy hozzávalót">
+    
+    <!-- A hozzávalók legördülő listája (üresen indul) -->
+    <datalist id="ingredientsList"></datalist>
+
+    <input type="number" id="weightInput" placeholder="Mennyiség (gramm)">
+    <button id="addIngredient">Hozzáadás</button>
+
+    <h2>Értékek</h2>
+    <p id="totalCarbs">Összes szénhidrát: 0.00 gramm</p>
+    
+    <ul id="ingredientList"></ul>
+    
+<p id="totalCalories">Összes kalória: 0.00 kCal</p>
+<p id="totalProtein">Összes fehérje: 0.00 gramm</p>
+
+    <h2>Összetevők</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Hozzávaló</th>
+            <th>Mennyiség (gramm)</th>
+            <th>Szénhidrát (gramm)</th>
+            <th>kCal           </th>
+            <th>Fehérje (gramm)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="ingredientTableBody">
+        <!-- Hozzávalók ide kerülnek -->
+    </tbody>
+</table>
+
+<!-- Adag szénhidráttartalmának kiszámítása -->
+
+    <h2>Adagonkénti szénhidráttartam</h2>
+
+<input type="number" id="servingSizeInput" placeholder="Adag mérete (gramm)">
+<button id="calculateServingCarbs">Adag szénhidráttartalma</button>
+<p id="servingCarbs">Szénhidráttartalom/adag: 0.00 gramm</p>
+
+<!-- Adag kalóriatartalmának kiszámítása -->
+<h2>Adagonkénti kalóriatartalom</h2>
+
+<input type="number" id="servingSizeInputCalories" placeholder="Adag mérete (gramm)">
+<button id="calculateServingCalories">Adag kalóriatartalma</button>
+<p id="servingCalories">Kalóriatartalom/adag: 0.00 kCal</p>
+
+<!-- Adag fehérjetartalmának kiszámítása -->
+<h2>Adagonkénti fehérjetartalom</h2>
+
+<input type="number" id="servingSizeInputProtein" placeholder="Adag mérete (gramm)">
+<button id="calculateServingProtein">Adag fehérjetartalma</button>
+<p id="servingProtein">Fehérjetartalom/adag: 0.00 gramm</p>
+
+<!-- Adag méretének kiszámítása -->
+
+<h2>Mekkora adagot ehetek?</h2>
+
+<!-- Option to choose calculation method -->
+<label for="calculationMethod">Válassz ki számítási alapot:</label>
+<select id="calculationMethod">
+    <option value="carbs">Szénhidrát</option>
+    <option value="calories">Kalória</option>
+    <option value="protein">Fehérje</option>
+</select>
+
+<!-- Input and button for calculating portion size -->
+<input type="number" id="desiredAmount" placeholder="Kívánt mennyiség (gramm vagy kCal)">
+<button id="calculatePortion">Adag méretének kiszámítása</button>
+<p id="portionSize">Adag mérete: 0.00 gramm</p>
+
+    <script src="app.js"></script>
+</body>
+</html>

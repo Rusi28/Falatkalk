@@ -1,0 +1,233 @@
+
+/* Ensure the body background and padding for overall spacing */
+body {
+    background-color: #c6c6c8;
+    padding: 20px;
+    text-align: center; /* Center-align text in the body */
+    font-family: 'Lilita One', sans-serif;
+}
+
+/* App container, centered using margin */
+#app {
+    max-width: 800px; /* Restrict maximum width for responsiveness */
+    margin: 0 auto; /* Center the app */
+    padding: 20px;
+    background-color: #7b9ee5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Reset text alignment inside the app */
+}
+
+/* Headings adjustments */
+h1, h2 {
+    text-align: center; /* Center-align headings */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Adjust heading for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Adjust subheading */
+    }
+
+    button {
+        padding: 10px 15px; /* Increase button padding on smaller screens */
+        font-size: 0.9rem; /* Slightly reduce button text size */
+    }
+
+    table th, table td {
+        padding: 10px; /* Reduce padding for table cells */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    input[type="text"], input[type="number"], select {
+        font-size: 0.9rem; /* Adjust input fields font size */
+        width: 100%; /* Make inputs take full width */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; /* Further adjust heading for phones */
+    }
+
+    button {
+        padding: 8px 12px; /* Adjust button padding on phones */
+        font-size: 0.8rem; /* Further reduce button text size */
+    }
+
+    input[type="text"], input[type="number"], select {
+        font-size: 0.8rem; /* Further reduce input fields font size */
+    }
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;  /* Increase button padding */
+    font-size: 1rem;  /* Larger text for buttons */
+    background-color: #00438a;  /* Primary blue color */
+    color: #c3d9ef;  /* White text */
+    border: none;
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;  /* Smooth hover transition */
+}
+
+button:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+}
+
+/* Heading color adjustments */
+h1, h2 {
+    color: #000000;  /* Darker text color for headings */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;  /* Light border for table cells */
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table th {
+    background-color: #205e97;  /* Light background for table headers */
+    color: #262626;
+}
+
+table td {
+    background-color: #fff;
+    color: #030303;
+}
+
+/* Input fields styling */
+input[type="text"], input[type="number"], select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;  /* Full width for inputs */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Total values styling */
+#totalCarbs, #totalCalories, #totalProtein {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 15px;
+}
+
+/* App container adjustments for better wrapping and centering */
+#app {
+    max-width: 800px; /* Restrict maximum width for better layout */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust margins and wrapping for buttons and inputs */
+button, input[type="text"], input[type="number"], select {
+    margin-bottom: 15px; /* Add bottom margin for spacing */
+    display: block; /* Ensure elements stack for responsiveness */
+    width: 50%; /* Ensure buttons and inputs are full-width on smaller screens */
+    box-sizing: border-box; /* Ensure padding is accounted for in width */
+}
+
+/* Media query for smaller screens (tablets) */
+@media (max-width: 768px) {
+    #app {
+        padding: 15px; /* Reduce padding on smaller screens */
+        max-width: 75%; /* Allow the container to take full width on smaller screens */
+    }
+
+    button {
+        font-size: 0.9rem; /* Slightly reduce button font size */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reduce heading size */
+    }
+
+    h2 {
+        font-size: 1.4rem; /* Reduce subheading size */
+    }
+}
+
+/* Media query for phones */
+@media (max-width: 480px) {
+    #app {
+        padding: 10px; /* Further reduce padding for very small screens */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Further reduce heading size */
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Further reduce subheading size */
+    }
+
+    button {
+        font-size: 0.8rem; /* Reduce button size for phones */
+    }
+}
+
+/* Adjust the app container to be more compact */
+#app {
+    max-width: 600px; /* Reduce max width to make it more compact */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Reduce the width of input fields and buttons */
+input[type="text"], input[type="number"], select {
+    width: calc(50% - 10px); /* Inputs take half width with spacing */
+    margin-right: 10px;
+    display: inline-block;
+}
+
+button {
+    width: auto; /* Let buttons adjust based on content */
+    display: inline-block; /* Make buttons stay in line with inputs */
+    padding: 8px 15px; /* Adjust padding to be more compact */
+}
+
+/* Adjust the table to make it more compact */
+table th, table td {
+    padding: 8px 10px; /* Reduce padding inside table cells */
+    font-size: 0.9rem; /* Make text in the table slightly smaller */
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 768px) {
+    #app {
+        padding: 15px;
+        max-width: 100%; /* Take full width on smaller screens */
+    }
+
+    input[type="text"], input[type="number"], select {
+        width: 75%; /* Make inputs full width on smaller screens */
+        margin-right: 0;
+    }
+
+    button {
+        width: 50%; /* Buttons also take full width on smaller screens */
+        margin-top: 10px; /* Add margin on smaller screens */
+    }
+}
+
