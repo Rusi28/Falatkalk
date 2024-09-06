@@ -489,48 +489,71 @@ document.getElementById('addIngredient').addEventListener('click', function() {
 
 // Existing code...
 
-// Adagonkénti szénhidráttartalom kiszámítása
-document.getElementById("calculateServingCarbs").addEventListener("click", function() {
+document.getElementById("calculateServingValues").addEventListener("click", function() {
     let servingSize = parseFloat(document.getElementById("servingSizeInput").value);
-    let carbsPerGram = (totalCarbs / totalWeight);
-    let servingCarbs = servingSize * carbsPerGram;
-    document.getElementById("servingCarbs").textContent = `Szénhidráttartalom/adag: ${servingCarbs.toFixed(2)} gramm`;
+
+    if (totalWeight > 0 && !isNaN(servingSize)) {
+        let carbsPerGram = totalCarbs / totalWeight;
+        let caloriesPerGram = totalCalories / totalWeight;
+        let proteinPerGram = totalProtein / totalWeight;
+
+        let servingCarbs = servingSize * carbsPerGram;
+        let servingCalories = servingSize * caloriesPerGram;
+        let servingProtein = servingSize * proteinPerGram;
+
+        document.getElementById("servingCarbs").textContent = `Szénhidráttartalom/adag: ${servingCarbs.toFixed(2)} gramm`;
+        document.getElementById("servingCalories").textContent = `Kalóriatartalom/adag: ${servingCalories.toFixed(2)} kCal`;
+        document.getElementById("servingProtein").textContent = `Fehérjetartalom/adag: ${servingProtein.toFixed(2)} gramm`;
+    } else {
+        alert("Adj meg egy érvényes adagméretet és hozzávalókat!");
+    }
 });
 
-// Adagonkénti kalóriatartalom kiszámítása
-document.getElementById("calculateServingCalories").addEventListener("click", function() {
-    let servingSize = parseFloat(document.getElementById("servingSizeInputCalories").value);
-    let caloriesPerGram = (totalCalories / totalWeight);  
-    let servingCalories = servingSize * caloriesPerGram;
-    document.getElementById("servingCalories").textContent = `Kalóriatartalom/adag: ${servingCalories.toFixed(2)} kCal`;
+
+let calculationMethod = "carbs"; // Default calculation method
+
+// Button click event listeners to set the active calculation method
+document.getElementById('btnCH').addEventListener('click', function() {
+    setActiveCalculationMethod('carbs');
+});
+document.getElementById('btnKCal').addEventListener('click', function() {
+    setActiveCalculationMethod('calories');
+});
+document.getElementById('btnProt').addEventListener('click', function() {
+    setActiveCalculationMethod('protein');
 });
 
-// Adagonkénti fehérjetartalom kiszámítása
-document.getElementById("calculateServingProtein").addEventListener("click", function() {
-    let servingSize = parseFloat(document.getElementById("servingSizeInputProtein").value);
-    let proteinPerGram = (totalProtein / totalWeight);  
-    let servingProtein = servingSize * proteinPerGram;
-    document.getElementById("servingProtein").textContent = `Fehérjetartalom/adag: ${servingProtein.toFixed(2)} gramm`;
-});
+// Function to handle the active button state and update the calculation method
+function setActiveCalculationMethod(method) {
+    calculationMethod = method;
+    document.querySelectorAll('.calc-btn').forEach(button => button.classList.remove('active'));
+    
+    if (method === 'carbs') {
+        document.getElementById('btnCH').classList.add('active');
+    } else if (method === 'calories') {
+        document.getElementById('btnKCal').classList.add('active');
+    } else if (method === 'protein') {
+        document.getElementById('btnProt').classList.add('active');
+    }
+}
 
-// Adag méretének kiszámítása (CH, kCal vagy fehérje alapján)
+// Update the portion size calculation logic based on the active calculation method
 document.getElementById("calculatePortion").addEventListener("click", function() {
-    let calculationMethod = document.getElementById("calculationMethod").value;
     let desiredAmount = parseFloat(document.getElementById("desiredAmount").value);
     let portionSize = 0;
 
-    // Calculation based on selected method
     if (calculationMethod === "carbs") {
-        let carbsPerGram = (totalCarbs / totalWeight); 
+        let carbsPerGram = totalCarbs / totalWeight; 
         portionSize = desiredAmount / carbsPerGram;
     } else if (calculationMethod === "calories") {
-        let caloriesPerGram = (totalCalories / totalWeight);
+        let caloriesPerGram = totalCalories / totalWeight;
         portionSize = desiredAmount / caloriesPerGram;
     } else if (calculationMethod === "protein") {
-        let proteinPerGram = (totalProtein / totalWeight);
+        let proteinPerGram = totalProtein / totalWeight;
         portionSize = desiredAmount / proteinPerGram;
     }
 
     document.getElementById("portionSize").textContent = `Adag mérete: ${portionSize.toFixed(2)} gramm`;
 });
+
 

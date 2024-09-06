@@ -45,37 +45,23 @@
 
 <!-- Adag szénhidráttartalmának kiszámítása -->
 
-    <h2>Adagonkénti szénhidráttartam</h2>
-
+    <h2>Adagonkénti értékek</h2>
 <input type="number" id="servingSizeInput" placeholder="Adag mérete (gramm)">
-<button id="calculateServingCarbs">Adag szénhidráttartalma</button>
+<button id="calculateServingValues">Adag értékeinek kiszámítása</button>
 <p id="servingCarbs">Szénhidráttartalom/adag: 0.00 gramm</p>
-
-<!-- Adag kalóriatartalmának kiszámítása -->
-<h2>Adagonkénti kalóriatartalom</h2>
-
-<input type="number" id="servingSizeInputCalories" placeholder="Adag mérete (gramm)">
-<button id="calculateServingCalories">Adag kalóriatartalma</button>
 <p id="servingCalories">Kalóriatartalom/adag: 0.00 kCal</p>
-
-<!-- Adag fehérjetartalmának kiszámítása -->
-<h2>Adagonkénti fehérjetartalom</h2>
-
-<input type="number" id="servingSizeInputProtein" placeholder="Adag mérete (gramm)">
-<button id="calculateServingProtein">Adag fehérjetartalma</button>
 <p id="servingProtein">Fehérjetartalom/adag: 0.00 gramm</p>
 
 <!-- Adag méretének kiszámítása -->
 
 <h2>Mekkora adagot ehetek?</h2>
 
-<!-- Option to choose calculation method -->
-<label for="calculationMethod">Válassz ki számítási alapot:</label>
-<select id="calculationMethod">
-    <option value="carbs">Szénhidrát</option>
-    <option value="calories">Kalória</option>
-    <option value="protein">Fehérje</option>
-</select>
+<!-- Add buttons in place of the dropdown -->
+<div id="calculationMethod">
+    <button id="btnCH" class="calc-btn active">CH</button>
+    <button id="btnKCal" class="calc-btn">kCal</button>
+    <button id="btnProt" class="calc-btn">Prot</button>
+</div>
 
 <!-- Input and button for calculating portion size -->
 <input type="number" id="desiredAmount" placeholder="Kívánt mennyiség (gramm vagy kCal)">

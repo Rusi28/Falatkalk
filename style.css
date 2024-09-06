@@ -4,7 +4,6 @@ body {
     background-color: #c6c6c8;
     padding: 20px;
     text-align: center; /* Center-align text in the body */
-    font-family: 'Lilita One', sans-serif;
 }
 
 /* App container, centered using margin */
@@ -231,3 +230,20 @@ table th, table td {
     }
 }
 
+.calc-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.calc-btn.active {
+    background-color: #0056b3;
+}
+
+.calc-btn:hover {
+    background-color: #0056b3;
+}
